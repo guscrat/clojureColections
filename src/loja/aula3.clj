@@ -2,15 +2,26 @@
   (:require [loja.db :as l.db]))
 
 
-(defn preco-por-pedido
-  [itens-do-pedido]
-  itens-do-pedido)
+(defn total-do-item
+  [[item-id detalhes]]
+  (* (get detalhes :quantidade 0) (get detalhes :preco-unitario 0)))
+
+(defn total-do-pedido
+  [pedido]
+  (reduce + (map total-do-item pedido)))
+
+(defn total-dos-pedidos
+  [pedidos]
+  (->> pedidos
+       (map :itens)
+       (map total-do-pedido)
+       (reduce +)))
 
 (defn pedidos-por-usuario
   [[usuario pedido]]
   {:usuario usuario
    :quantidade-pedidos (count pedido)
-   :preco-total (preco-por-pedido pedido)})
+   :preco-total (total-dos-pedidos pedido)})
 
 (->> (l.db/todos-os-pedidos)
      (group-by :usuario)
