@@ -1,23 +1,27 @@
-(ns loja.test)
+(ns loja.test
+  (:require [loja.db :as l.db]))
 
-(def pedido1 {:usuario 20,
-              :itens
-              {:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-               :camiseta {:id :camiseta, :quantidade 10, :preco-unitario 40},
-               :tenis {:id :tenis, :quantidade 1}}})
+(defn valor-por-item
+  [[_ key]]
+  (* (get key :quantidade 0) (get key :preco-unitario 0)))
 
-(defn print-elemento
-  [elemento]
-  (
-   :elemento elemento
-  ))
+(defn percorre-pedido
+  [item]
+  (reduce + (map valor-por-item item)))
 
-(map print-elemento pedido1)
+(defn retorna-itens
+  [itens]
+  (->> itens
+       (map :itens)
+       (map percorre-pedido)
+       (reduce +)))
 
+(defn retorna-pedios
+  [[usuario elementos]]
+  {:usuario usuario
+   :quantidade-de-pedidos (count elementos)
+   :preco-total (retorna-itens elementos)})
 
-(def precos [30 700 1000])
-
-(println (get precos 0))
-(println (get precos 1))
-(println (get precos 2))
-(println (get precos 3 nil))
+(->> (l.db/todos-os-pedidos)
+     (group-by :usuario)
+     (map retorna-pedios))

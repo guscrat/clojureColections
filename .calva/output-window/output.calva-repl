@@ -1,207 +1,23 @@
-; This is the Calva REPL Window.
-; It's just a file, really, with some special treatment from Calva.
-; Use it as a REPL input prompt if you like. (When the REPL is connected.)
-; TIPS: The keyboard shortcut `ctrl+alt+o r` shows and focuses this window
-; Please see https://calva.io/repl-window/ for more info.
-; Happy coding! ♥️
-
-; TIPS: As with any Clojure file when the REPL is connected:
-; - `alt+enter` evaluates the current top level form.
-; - `ctrl+enter` evaluates the current form.
-; Special for this file:
-; - `alt+up` and `alt+down` traverse up and down the REPL command history
-;    when the cursor is after the last contents at the prompt
-; 
-; See also the Calva Inspector: https://calva.io/inspector/
-
-PLEASE NOTE
-We will update the default location of this file.
-The new default location will be
-  "<projectRootPath>/.calva/repl.calva-repl"
-For now the legacy path is used by default.
-To give yourself a smooth transition, you can opt in
-to the change, by configuring this setting as false:
-  "calva.useLegacyReplWindowPath"
-and then add "**/.calva/repl.calva-repl" to your ".gitignore" file.
-
-
-This file is configured as the output destination for all REPL output.
-You can configure this with the setting:
-  "calva.outputDestinations"
-
-
-; Jacking in...
-; Connecting using "Leiningen" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-
-; Starting Jack-in: pushd c:\Users\gusta\Downloads\clojure_course\loja & cmd.exe /d /c lein update-in :dependencies conj [nrepl,"1.1.1"] -- update-in :plugins conj [cider/cider-nrepl,"0.47.1"] -- update-in [:repl-options,:nrepl-middleware] conj '["cider.nrepl/cider-middleware"]' -- with-profile +uberjar repl :headless & popd
-; Using host:port 127.0.0.1:64934 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
-nil
-clj꞉loja.core꞉> 
-"Please see https://calva.io/output/#about-stdout-in-the-repl-window
-about why stdout printed to this file is prepended with `;` to be line comments."
-clj꞉loja.core꞉> 
-; Jack-in done.
-clj꞉loja.core꞉> 
-({:usuario 15, :quantidade-pedidos 3, :preco-total -1}
- {:usuario 1, :quantidade-pedidos 1, :preco-total -1}
- {:usuario 10, :quantidade-pedidos 1, :preco-total -1}
- {:usuario 20, :quantidade-pedidos 1, :preco-total -1})
-clj꞉loja.aula3꞉> 
-[{:usuario 15, :itens {:mochila {:id :mochila, :quantidade 2, :preco-unitario 80}, :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40}, :tenis {:id :tenis, :quantidade 1}}} {:usuario 15, :itens {:mochila {:id :mochila, :quantidade 2, :preco-unitario 80}, :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40}, :tenis {:id :tenis, :quantidade 1}}} {:usuario 15, :itens {:mochila {:id :mochila, :quantidade 2, :preco-unitario 80}, :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40}, :tenis {:id :tenis, :quantidade 1}}}]
-({:usuario 15,
-  :quantidade-pedidos 3,
-  :preco-total
-  nil}[{:usuario 1, :itens {:mochila {:id :mochila, :quantidade 2, :preco-unitario 80}, :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40}, :tenis {:id :tenis, :quantidade 1}}}]
-
- {:usuario 1,
-  :quantidade-pedidos 1,
-  :preco-total
-  nil}[{:usuario 10, :itens {:mochila {:id :mochila, :quantidade 20, :preco-unitario 80}, :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40}, :tenis {:id :tenis, :quantidade 1}}}]
-
- {:usuario 10,
-  :quantidade-pedidos 1,
-  :preco-total
-  nil}[{:usuario 20, :itens {:mochila {:id :mochila, :quantidade 2, :preco-unitario 80}, :camiseta {:id :camiseta, :quantidade 10, :preco-unitario 40}, :tenis {:id :tenis, :quantidade 1}}}]
-
- {:usuario 20, :quantidade-pedidos 1, :preco-total nil})
-clj꞉loja.aula3꞉> 
-({:usuario 15,
-  :quantidade-pedidos 3,
-  :preco-total
-  [{:usuario 15,
-    :itens
-    {:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-     :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40},
-     :tenis {:id :tenis, :quantidade 1}}}
-   {:usuario 15,
-    :itens
-    {:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-     :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40},
-     :tenis {:id :tenis, :quantidade 1}}}
-   {:usuario 15,
-    :itens
-    {:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-     :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40},
-     :tenis {:id :tenis, :quantidade 1}}}]}
- {:usuario 1,
-  :quantidade-pedidos 1,
-  :preco-total
-  [{:usuario 1,
-    :itens
-    {:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-     :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40},
-     :tenis {:id :tenis, :quantidade 1}}}]}
- {:usuario 10,
-  :quantidade-pedidos 1,
-  :preco-total
-  [{:usuario 10,
-    :itens
-    {:mochila {:id :mochila, :quantidade 20, :preco-unitario 80},
-     :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40},
-     :tenis {:id :tenis, :quantidade 1}}}]}
- {:usuario 20,
-  :quantidade-pedidos 1,
-  :preco-total
-  [{:usuario 20,
-    :itens
-    {:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-     :camiseta {:id :camiseta, :quantidade 10, :preco-unitario 40},
-     :tenis {:id :tenis, :quantidade 1}}}]})
-clj꞉loja.aula3꞉> 
-({:usuario 15,
-  :quantidade-pedidos 3,
-  :preco-total
-  ({:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-    :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40},
-    :tenis {:id :tenis, :quantidade 1}}
-   {:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-    :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40},
-    :tenis {:id :tenis, :quantidade 1}}
-   {:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-    :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40},
-    :tenis {:id :tenis, :quantidade 1}})}
- {:usuario 1,
-  :quantidade-pedidos 1,
-  :preco-total
-  ({:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-    :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40},
-    :tenis {:id :tenis, :quantidade 1}})}
- {:usuario 10,
-  :quantidade-pedidos 1,
-  :preco-total
-  ({:mochila {:id :mochila, :quantidade 20, :preco-unitario 80},
-    :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40},
-    :tenis {:id :tenis, :quantidade 1}})}
- {:usuario 20,
-  :quantidade-pedidos 1,
-  :preco-total
-  ({:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-    :camiseta {:id :camiseta, :quantidade 10, :preco-unitario 40},
-    :tenis {:id :tenis, :quantidade 1}})})
-clj꞉loja.aula3꞉> 
-; Syntax error compiling at (c:\Users\gusta\Downloads\clojure_course\loja\src\loja\aula3.clj:5:1).
-; Unable to resolve symbol: pedidod in this context
-; 
-; Error printing return value (IllegalStateException) at clojure.lang.Var$Unbound/throwArity (Var.java:45).
-; Attempting to call unbound fn: #'loja.aula3/total-do-pedido
-clj꞉loja.aula3꞉> 
-({:usuario 15,
-  :quantidade-pedidos 3,
-  :preco-total
-  ({:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-    :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40},
-    :tenis {:id :tenis, :quantidade 1}}
-   {:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-    :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40},
-    :tenis {:id :tenis, :quantidade 1}}
-   {:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-    :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40},
-    :tenis {:id :tenis, :quantidade 1}})}
- {:usuario 1,
-  :quantidade-pedidos 1,
-  :preco-total
-  ({:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-    :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40},
-    :tenis {:id :tenis, :quantidade 1}})}
- {:usuario 10,
-  :quantidade-pedidos 1,
-  :preco-total
-  ({:mochila {:id :mochila, :quantidade 20, :preco-unitario 80},
-    :camiseta {:id :camiseta, :quantidade 3, :preco-unitario 40},
-    :tenis {:id :tenis, :quantidade 1}})}
- {:usuario 20,
-  :quantidade-pedidos 1,
-  :preco-total
-  ({:mochila {:id :mochila, :quantidade 2, :preco-unitario 80},
-    :camiseta {:id :camiseta, :quantidade 10, :preco-unitario 40},
-    :tenis {:id :tenis, :quantidade 1}})})
-clj꞉loja.aula3꞉> 
-({:usuario 15, :quantidade-pedidos 3, :preco-total (-1 -1 -1)}
- {:usuario 1, :quantidade-pedidos 1, :preco-total (-1)}
- {:usuario 10, :quantidade-pedidos 1, :preco-total (-1)}
- {:usuario 20, :quantidade-pedidos 1, :preco-total (-1)})
-clj꞉loja.aula3꞉> 
-; Error printing return value (NullPointerException) at clojure.lang.Numbers/ops (Numbers.java:1095).
-; Cannot invoke "Object.getClass()" because "x" is null
-clj꞉loja.aula3꞉> 
-({:usuario 15, :quantidade-pedidos 3, :preco-total ((160 120 0) (160 120 0) (160 120 0))}
- {:usuario 1, :quantidade-pedidos 1, :preco-total ((160 120 0))}
- {:usuario 10, :quantidade-pedidos 1, :preco-total ((1600 120 0))}
- {:usuario 20, :quantidade-pedidos 1, :preco-total ((160 400 0))})
-clj꞉loja.aula3꞉> 
-({:usuario 15, :quantidade-pedidos 3, :preco-total (280 280 280)}
- {:usuario 1, :quantidade-pedidos 1, :preco-total (280)}
- {:usuario 10, :quantidade-pedidos 1, :preco-total (1720)}
- {:usuario 20, :quantidade-pedidos 1, :preco-total (560)})
-clj꞉loja.aula3꞉> 
-({:usuario 15, :quantidade-pedidos 3, :preco-total 840}
- {:usuario 1, :quantidade-pedidos 1, :preco-total 280}
- {:usuario 10, :quantidade-pedidos 1, :preco-total 1720}
- {:usuario 20, :quantidade-pedidos 1, :preco-total 560})
-clj꞉loja.aula3꞉> 
+({:usuario 15, :quantidade-de-pedidos 3, :preco-total ((2 3 1) (2 3 1) (2 3 1))}
+ {:usuario 1, :quantidade-de-pedidos 1, :preco-total ((2 3 1))}
+ {:usuario 10, :quantidade-de-pedidos 1, :preco-total ((20 3 1))}
+ {:usuario 20, :quantidade-de-pedidos 1, :preco-total ((2 10 1))})
+clj꞉loja.test꞉> 
+({:usuario 15, :quantidade-de-pedidos 3, :preco-total (6 6 6)}
+ {:usuario 1, :quantidade-de-pedidos 1, :preco-total (6)}
+ {:usuario 10, :quantidade-de-pedidos 1, :preco-total (24)}
+ {:usuario 20, :quantidade-de-pedidos 1, :preco-total (13)})
+clj꞉loja.test꞉> 
+; Error printing return value (NullPointerException) at null (REPL:1).
+; null
+clj꞉loja.test꞉> 
+({:usuario 15, :quantidade-de-pedidos 3, :preco-total (280 280 280)}
+ {:usuario 1, :quantidade-de-pedidos 1, :preco-total (280)}
+ {:usuario 10, :quantidade-de-pedidos 1, :preco-total (1720)}
+ {:usuario 20, :quantidade-de-pedidos 1, :preco-total (560)})
+clj꞉loja.test꞉> 
+({:usuario 15, :quantidade-de-pedidos 3, :preco-total 840}
+ {:usuario 1, :quantidade-de-pedidos 1, :preco-total 280}
+ {:usuario 10, :quantidade-de-pedidos 1, :preco-total 1720}
+ {:usuario 20, :quantidade-de-pedidos 1, :preco-total 560})
+clj꞉loja.test꞉> 
