@@ -24,4 +24,6 @@
 
 (->> (l.db/todos-os-pedidos)
      (group-by :usuario)
-     (map retorna-pedios))
+     (map retorna-pedios)
+     (sort-by :preco-total)
+     (reverse))

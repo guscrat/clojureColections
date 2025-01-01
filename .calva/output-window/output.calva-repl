@@ -1,23 +1,157 @@
-({:usuario 15, :quantidade-de-pedidos 3, :preco-total ((2 3 1) (2 3 1) (2 3 1))}
- {:usuario 1, :quantidade-de-pedidos 1, :preco-total ((2 3 1))}
- {:usuario 10, :quantidade-de-pedidos 1, :preco-total ((20 3 1))}
- {:usuario 20, :quantidade-de-pedidos 1, :preco-total ((2 10 1))})
-clj꞉loja.test꞉> 
-({:usuario 15, :quantidade-de-pedidos 3, :preco-total (6 6 6)}
- {:usuario 1, :quantidade-de-pedidos 1, :preco-total (6)}
- {:usuario 10, :quantidade-de-pedidos 1, :preco-total (24)}
- {:usuario 20, :quantidade-de-pedidos 1, :preco-total (13)})
-clj꞉loja.test꞉> 
-; Error printing return value (NullPointerException) at null (REPL:1).
-; null
-clj꞉loja.test꞉> 
-({:usuario 15, :quantidade-de-pedidos 3, :preco-total (280 280 280)}
- {:usuario 1, :quantidade-de-pedidos 1, :preco-total (280)}
- {:usuario 10, :quantidade-de-pedidos 1, :preco-total (1720)}
- {:usuario 20, :quantidade-de-pedidos 1, :preco-total (560)})
-clj꞉loja.test꞉> 
-({:usuario 15, :quantidade-de-pedidos 3, :preco-total 840}
- {:usuario 1, :quantidade-de-pedidos 1, :preco-total 280}
- {:usuario 10, :quantidade-de-pedidos 1, :preco-total 1720}
- {:usuario 20, :quantidade-de-pedidos 1, :preco-total 560})
-clj꞉loja.test꞉> 
+; Resumo ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 20, :quantidade-pedidos 1, :preco-total 560})
+; Ordenado ({:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720})
+; Reverse ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; 20
+; Primeiro {:usuario 10, :quantidade-pedidos 1, :preco-total 1720}
+; Segundo {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; Resto ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; Total/Conta 4
+; Class/Tipo clojure.lang.PersistentList
+nil
+clj꞉loja.aula4꞉> 
+; Resumo ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 20, :quantidade-pedidos 1, :preco-total 560})
+; Ordenado ({:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720})
+; Reverse ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; 20
+; Primeiro {:usuario 10, :quantidade-pedidos 1, :preco-total 1720}
+; Segundo {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; Resto ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; Total/Conta 4
+; Class/Tipo clojure.lang.PersistentList
+; nth 1/posicao {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+nil
+clj꞉loja.aula4꞉> 
+; Resumo ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 20, :quantidade-pedidos 1, :preco-total 560})
+; Ordenado ({:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720})
+; Reverse ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; 20
+; Primeiro {:usuario 10, :quantidade-pedidos 1, :preco-total 1720}
+; Segundo {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; Resto ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; Total/Conta 4
+; Class/Tipo clojure.lang.PersistentList
+; nth 1/posicao {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; get 1 nil
+nil
+clj꞉loja.aula4꞉> 
+; Resumo ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 20, :quantidade-pedidos 1, :preco-total 560})
+; Ordenado ({:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720})
+; Reverse ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; 20
+; Primeiro {:usuario 10, :quantidade-pedidos 1, :preco-total 1720}
+; Segundo {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; Resto ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; Total/Conta 4
+; Class/Tipo clojure.lang.PersistentList
+; nth 1/posicao {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; get 1 nil
+; Tak ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840})
+nil
+clj꞉loja.aula4꞉> 
+; > 500 filter #function[loja.aula4/eval10844/fn--10845]
+nil
+clj꞉loja.aula4꞉> 
+; Resumo ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 20, :quantidade-pedidos 1, :preco-total 560})
+; Ordenado ({:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720})
+; Reverse ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; 20
+; Primeiro {:usuario 10, :quantidade-pedidos 1, :preco-total 1720}
+; Segundo {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; Resto ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; Total/Conta 4
+; Class/Tipo clojure.lang.PersistentList
+; nth 1/posicao {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; get 1 nil
+; Tak ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840})
+; > 500 filter #function[loja.aula4/eval10868/fn--10869]
+nil
+clj꞉loja.aula4꞉> 
+; Resumo ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 20, :quantidade-pedidos 1, :preco-total 560})
+; Ordenado ({:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720})
+; Reverse ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; 20
+; Primeiro {:usuario 10, :quantidade-pedidos 1, :preco-total 1720}
+; Segundo {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; Resto ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; Total/Conta 4
+; Class/Tipo clojure.lang.PersistentList
+; nth 1/posicao {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; get 1 nil
+; Tak ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840})
+; > 500 filter #function[loja.aula4/eval10893/fn--10894]
+nil
+clj꞉loja.aula4꞉> 
+; Syntax error compiling at (c:\Users\gusta\Downloads\clojure_course\loja\src\loja\aula4.clj:44:28).
+; Unable to resolve symbol: resumo in this context
+clj꞉loja.aula4꞉> 
+; > 500 filter #function[loja.aula4/eval10903/fn--10904]
+nil
+clj꞉loja.aula4꞉> 
+({:usuario 10, :quantidade-pedidos 1, :preco-total 1720}
+ {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+ {:usuario 20, :quantidade-pedidos 1, :preco-total 560}
+ {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+clj꞉loja.aula4꞉> 
+; Resumo ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 20, :quantidade-pedidos 1, :preco-total 560})
+; Ordenado ({:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720})
+; Reverse ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; 20
+; Primeiro {:usuario 10, :quantidade-pedidos 1, :preco-total 1720}
+; Segundo {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; Resto ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; Total/Conta 4
+; Class/Tipo clojure.lang.PersistentList
+; nth 1/posicao {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; get 1 nil
+; Tak ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840})
+; Error printing return value (NullPointerException) at clojure.lang.Numbers/ops (Numbers.java:1095).
+; Cannot invoke "Object.getClass()" because "x" is null
+clj꞉loja.aula4꞉> 
+; Resumo ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 20, :quantidade-pedidos 1, :preco-total 560})
+; Ordenado ({:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720})
+; Reverse ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; 20
+; Primeiro {:usuario 10, :quantidade-pedidos 1, :preco-total 1720}
+; Segundo {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; Resto ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; Total/Conta 4
+; Class/Tipo clojure.lang.PersistentList
+; nth 1/posicao {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; get 1 nil
+; Take ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840})
+({:usuario 10, :quantidade-pedidos 1, :preco-total 1720}
+ {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+ {:usuario 20, :quantidade-pedidos 1, :preco-total 560})
+clj꞉loja.aula4꞉> 
+; Resumo ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 20, :quantidade-pedidos 1, :preco-total 560})
+; Ordenado ({:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720})
+; Reverse ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; 20
+; Primeiro {:usuario 10, :quantidade-pedidos 1, :preco-total 1720}
+; Segundo {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; Resto ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; Total/Conta 4
+; Class/Tipo clojure.lang.PersistentList
+; nth 1/posicao {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; get 1 nil
+; Take ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840})
+; > 500 filter excluded ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560})
+; > 500 filter some true
+nil
+clj꞉loja.aula4꞉> 
+; Resumo ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 20, :quantidade-pedidos 1, :preco-total 560})
+; Ordenado ({:usuario 1, :quantidade-pedidos 1, :preco-total 280} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 10, :quantidade-pedidos 1, :preco-total 1720})
+; Reverse ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; 20
+; Primeiro {:usuario 10, :quantidade-pedidos 1, :preco-total 1720}
+; Segundo {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; Resto ({:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560} {:usuario 1, :quantidade-pedidos 1, :preco-total 280})
+; Total/Conta 4
+; Class/Tipo clojure.lang.PersistentList
+; nth 1/posicao {:usuario 15, :quantidade-pedidos 3, :preco-total 840}
+; get 1 nil
+; Take ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840})
+; > 500 filter excluded ({:usuario 10, :quantidade-pedidos 1, :preco-total 1720} {:usuario 15, :quantidade-pedidos 3, :preco-total 840} {:usuario 20, :quantidade-pedidos 1, :preco-total 560})
+; Execution error (UnsupportedOperationException) at loja.aula4/eval11023 (form-init12626107696155390277.clj:45).
+; count not supported on this type: Boolean
+clj꞉loja.aula4꞉> 
