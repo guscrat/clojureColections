@@ -42,4 +42,4 @@
 (let [pedidos (l.db/todos-os-pedidos)
       resumo (ordenado-por-usuario-resumo pedidos)]
   (println "> 500 filter excluded" (filter #(> (:preco-total %) 500) resumo))
-  (println "> 500 filter some" ((some #(> (:preco-total %) 500) resumo))))
+  (println "> 500 filter some" (some #(> (:preco-total %) 500) resumo)))
