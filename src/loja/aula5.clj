@@ -11,7 +11,13 @@
       resumo (l.logic/resumo-por-usuario pedidos)]
   (keep gastou-bastante? resumo))
 
+; Descontruindo o KEEP
 (defn gastou-bastante?
   [info-do-usuario]
-  (println "gastou-bastante?" (:usuario-id info-do-usuario))
+  (println "gastou-bastante?" (:usuario info-do-usuario))
   (> (:preco-total info-do-usuario) 500))
+
+(let [pedidos (l.db/todos-os-pedidos)
+      resumo (l.logic/resumo-por-usuario pedidos)]
+  
+  (keep gastou-bastante? resumo))
